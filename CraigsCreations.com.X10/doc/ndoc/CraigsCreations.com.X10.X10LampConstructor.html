@@ -1,0 +1,14 @@
+﻿<html dir="LTR"><head><META http-equiv="Content-Type" content="text/html; charset=utf-8"><meta name="vs_targetSchema" content="http://schemas.microsoft.com/intellisense/ie5"><title>X10Lamp Constructor</title><xml></xml><link rel="stylesheet" type="text/css" href="MSDN.css"><script language="javascript" type="text/javascript" src="scroll.js"></script></head><body id="bodyID" class="dtBODY"><div id="nsbanner"><div id="bannerrow1"><table class="bannerparthead" cellspacing="0"><tr id="hdr"><td class="runninghead">An NDoc Documented Class Library</td><td class="product"></td></tr></table></div><div id="TitleRow"><h1 class="dtH1">X10Lamp Constructor </h1></div></div><div id="nstext"><p>
+            X10Lamp Constructor.  This initializes the light level to zero and passes the controller
+            and device code to the application constructor.
+            The <i>controller</i> Parameter takes an object that has implemented the
+            IX10Controller interface.
+            The <i>code</i> Parameter takes an Integer setting the device code of the lamp
+            module.
+            </p><div class="syntax">public X10Lamp(<br>   <a href="CraigsCreations.com.X10.IX10Controller.html">IX10Controller</a> <i>controller</i>,<br>   <a href="ms-help://MS.NETFrameworkSDK/cpref/html/frlrfSystemInt32ClassTopic.htm">int</a> <i>code</i><br>);</div><h4 class="dtH4">Remarks</h4><p>
+            The dimming/brighening functions depend on the lamp module being off or light level at 0
+            when module is instantiated.  If this is not the case then the dimm/brighten function may
+            perform strangely until the device has been turned off/on by this interface.
+            Also since there is no feed back from module dimming or brightening through other
+            remote controllers will cause problems.
+            </p><h4 class="dtH4">See Also</h4><p><a href="CraigsCreations.com.X10.X10Lamp.html">X10Lamp Class</a> | <a href="CraigsCreations.com.X10.X10LampMembers.html">X10Lamp Members</a> | <a href="CraigsCreations.com.X10.html">CraigsCreations.com.X10 Namespace</a></p><object type="application/x-oleobject" classid="clsid:1e2a7bd0-dab9-11d0-b93a-00c04fc99f9e" viewastext="viewastext"><param name="Keyword" value="X10Lamp class, constructor"></object></div></body></html>

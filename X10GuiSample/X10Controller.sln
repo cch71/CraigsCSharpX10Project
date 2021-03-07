@@ -1,0 +1,29 @@
+Microsoft Visual Studio Solution File, Format Version 8.00
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "X10Controller", "X10Controller.csproj", "{FAF3CCC4-AEA1-4F40-B979-541899E4E31C}"
+	ProjectSection(ProjectDependencies) = postProject
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CraigsCreations.com.X10", "..\CraigsCreations.com.X10\CraigsCreations.com.X10.csproj", "{33154EFB-2193-4942-B6AF-88931668A0D8}"
+	ProjectSection(ProjectDependencies) = postProject
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfiguration) = preSolution
+		Debug = Debug
+		Release = Release
+	EndGlobalSection
+	GlobalSection(ProjectConfiguration) = postSolution
+		{FAF3CCC4-AEA1-4F40-B979-541899E4E31C}.Debug.ActiveCfg = Debug|.NET
+		{FAF3CCC4-AEA1-4F40-B979-541899E4E31C}.Debug.Build.0 = Debug|.NET
+		{FAF3CCC4-AEA1-4F40-B979-541899E4E31C}.Release.ActiveCfg = Release|.NET
+		{FAF3CCC4-AEA1-4F40-B979-541899E4E31C}.Release.Build.0 = Release|.NET
+		{33154EFB-2193-4942-B6AF-88931668A0D8}.Debug.ActiveCfg = Debug|.NET
+		{33154EFB-2193-4942-B6AF-88931668A0D8}.Debug.Build.0 = Debug|.NET
+		{33154EFB-2193-4942-B6AF-88931668A0D8}.Release.ActiveCfg = Release|.NET
+		{33154EFB-2193-4942-B6AF-88931668A0D8}.Release.Build.0 = Release|.NET
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+	EndGlobalSection
+	GlobalSection(ExtensibilityAddIns) = postSolution
+	EndGlobalSection
+EndGlobal

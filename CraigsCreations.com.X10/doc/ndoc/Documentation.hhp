@@ -1,0 +1,85 @@
+[FILES]
+CraigsCreations.com.X10.html
+CraigsCreations.com.X10.ControllerType.html
+CraigsCreations.com.X10.Function.html
+CraigsCreations.com.X10.HouseCode.html
+CraigsCreations.com.X10.IX10Controller.html
+CraigsCreations.com.X10.IX10ControllerMembers.html
+CraigsCreations.com.X10.IX10ControllerProperties.html
+CraigsCreations.com.X10.IX10Controller.Controller.html
+CraigsCreations.com.X10.IX10ControllerMethods.html
+CraigsCreations.com.X10.IX10Controller.ControlDevice.html
+CraigsCreations.com.X10.IX10Controller.TurnAllLampsOff.html
+CraigsCreations.com.X10.IX10Controller.TurnAllLampsOn.html
+CraigsCreations.com.X10.IX10Controller.TurnAllUnitsOff.html
+CraigsCreations.com.X10.X10Application.html
+CraigsCreations.com.X10.X10ApplicationMembers.html
+CraigsCreations.com.X10.X10ApplicationConstructor.html
+CraigsCreations.com.X10.X10ApplicationFields.html
+CraigsCreations.com.X10.X10Application.deviceCode.html
+CraigsCreations.com.X10.X10Application.x10Controller.html
+CraigsCreations.com.X10.X10ApplicationProperties.html
+CraigsCreations.com.X10.X10Application.Controller.html
+CraigsCreations.com.X10.X10Application.DeviceCode.html
+CraigsCreations.com.X10.X10ApplicationMethods.html
+CraigsCreations.com.X10.X10Application.Off.html
+CraigsCreations.com.X10.X10Application.On.html
+CraigsCreations.com.X10.X10CM11aController.html
+CraigsCreations.com.X10.X10CM11aControllerMembers.html
+CraigsCreations.com.X10.X10CM11aControllerConstructor.html
+CraigsCreations.com.X10.X10CM11aControllerConstructor1.html
+CraigsCreations.com.X10.X10CM11aControllerConstructor2.html
+CraigsCreations.com.X10.X10CM11aControllerProperties.html
+CraigsCreations.com.X10.X10CM11aController.Controller.html
+CraigsCreations.com.X10.X10CM11aController.TransmissionRetries.html
+CraigsCreations.com.X10.X10CM11aControllerMethods.html
+CraigsCreations.com.X10.X10CM11aController.ControlDevice.html
+CraigsCreations.com.X10.X10CM11aController.Finalize.html
+CraigsCreations.com.X10.X10CM11aController.TurnAllLampsOff.html
+CraigsCreations.com.X10.X10CM11aController.TurnAllLampsOn.html
+CraigsCreations.com.X10.X10CM11aController.TurnAllUnitsOff.html
+CraigsCreations.com.X10.X10CM11aController.Header.html
+CraigsCreations.com.X10.X10CM17aController.html
+CraigsCreations.com.X10.X10CM17aControllerMembers.html
+CraigsCreations.com.X10.X10CM17aControllerConstructor.html
+CraigsCreations.com.X10.X10CM17aControllerProperties.html
+CraigsCreations.com.X10.X10CM17aController.Controller.html
+CraigsCreations.com.X10.X10CM17aControllerMethods.html
+CraigsCreations.com.X10.X10CM17aController.ControlDevice.html
+CraigsCreations.com.X10.X10CM17aController.TurnAllLampsOff.html
+CraigsCreations.com.X10.X10CM17aController.TurnAllLampsOn.html
+CraigsCreations.com.X10.X10CM17aController.TurnAllUnitsOff.html
+CraigsCreations.com.X10.X10Lamp.html
+CraigsCreations.com.X10.X10LampMembers.html
+CraigsCreations.com.X10.X10LampConstructor.html
+CraigsCreations.com.X10.X10LampFields.html
+CraigsCreations.com.X10.X10Lamp.lightLevel.html
+CraigsCreations.com.X10.X10LampProperties.html
+CraigsCreations.com.X10.X10Lamp.LightLevel.html
+CraigsCreations.com.X10.X10LampMethods.html
+CraigsCreations.com.X10.X10Lamp.Brighten.html
+CraigsCreations.com.X10.X10Lamp.Brighten2.html
+CraigsCreations.com.X10.X10Lamp.Brighten1.html
+CraigsCreations.com.X10.X10Lamp.Dim.html
+CraigsCreations.com.X10.X10Lamp.Dim2.html
+CraigsCreations.com.X10.X10Lamp.Dim1.html
+CraigsCreations.com.X10.X10Lamp.Off.html
+CraigsCreations.com.X10.X10Lamp.On.html
+
+[OPTIONS]
+Auto Index=Yes
+Compatibility=1.1 or later
+Compiled file=Documentation.chm
+Default Window=MsdnHelp
+Default topic=CraigsCreations.com.X10.html
+Display compile progress=No
+Error log file=Documentation.log
+Full-text search=Yes
+Index file=Documentation.hhk
+Language=0x409 English (United States)
+Contents file=Documentation.hhc
+
+[WINDOWS]
+MsdnHelp="Documentation Help","Documentation.hhc","Documentation.hhk",,,,,,,0x62520,220,0x383e,[86,51,872,558],,,,,,,0
+
+[INFOTYPES]

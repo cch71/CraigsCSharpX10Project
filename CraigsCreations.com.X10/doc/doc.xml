@@ -1,0 +1,384 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>CraigsCreations.com.X10</name>
+    </assembly>
+    <members>
+        <member name="T:CraigsCreations.com.X10.HouseCode">
+            <summary>
+            Set of Global enumeration that support the X10 system.
+            </summary>
+        </member>
+        <member name="T:CraigsCreations.com.X10.IX10Controller">
+            <summary>
+            Summary description for IX10Controller.
+            </summary>
+        </member>
+        <member name="M:CraigsCreations.com.X10.IX10Controller.ControlDevice(System.Int32,CraigsCreations.com.X10.Function,System.Int32)">
+            <summary>
+            Controls individual devices
+            </summary>
+            <param name="deviceCode">Device Code to be operated on</param>
+            <param name="deviceCommand">Command to send to device</param>
+            <param name="lightLevel">Ammount to lower or raise light levels for lamp modules</param>
+        </member>
+        <member name="M:CraigsCreations.com.X10.IX10Controller.TurnAllUnitsOff">
+            <summary>
+            Turns all X10 controlled Devices Off.
+            </summary>
+        </member>
+        <member name="M:CraigsCreations.com.X10.IX10Controller.TurnAllLampsOn">
+            <summary>
+            Turns all X10 controlled Lamps On.
+            </summary>
+        </member>
+        <member name="M:CraigsCreations.com.X10.IX10Controller.TurnAllLampsOff">
+            <summary>
+            Turns all X10 controlled Lamps Off.
+            </summary>
+        </member>
+        <member name="P:CraigsCreations.com.X10.IX10Controller.Controller">
+            <value>Returns the ControllerType of this object.</value>
+        </member>
+        <member name="T:CraigsCreations.com.X10.X10Application">
+            <summary>
+            X10Application is a class desinged to handle funtions relating to the Application Module.
+            </summary>
+        </member>
+        <member name="F:CraigsCreations.com.X10.X10Application.deviceCode">
+            <remarks>Application Device Code</remarks>
+        </member>
+        <member name="F:CraigsCreations.com.X10.X10Application.x10Controller">
+            <remarks>x10Controller object that controls this device </remarks>
+        </member>
+        <member name="M:CraigsCreations.com.X10.X10Application.#ctor(CraigsCreations.com.X10.IX10Controller,System.Int32)">
+            <summary>
+            X10Application Constructor. Initializes the internal x10Controller and deviceCode variables
+            The <paramref name="controller"/> Parameter takes an object that has implemented the
+            IX10Controller interface.
+            The <paramref name="code"/> Parameter takes an Integer setting the device code of the lamp
+            module.
+            </summary>
+        </member>
+        <member name="M:CraigsCreations.com.X10.X10Application.On">
+            <summary>
+            Turns the Application Module On.
+            </summary>
+        </member>
+        <member name="M:CraigsCreations.com.X10.X10Application.Off">
+            <summary>
+            Turns the Application Module Off.
+            </summary>
+        </member>
+        <member name="P:CraigsCreations.com.X10.X10Application.DeviceCode">
+            <value>DeviceCode sets or returns the assigned Device Code </value>
+        </member>
+        <member name="P:CraigsCreations.com.X10.X10Application.Controller">
+            <value>Controller sets or returns the assigned X10 Controller Object </value>
+        </member>
+        <member name="T:CraigsCreations.com.X10.X10CM11aController">
+            <summary>
+            This class controls the CM11a X10 Controller.  It is responsible for all
+            IO operations between the CM11a Hardware and the Module classes.  It has implemented
+            Some global functionality as defined in the IX10Controller Interface
+            <see cref="T:CraigsCreations.com.X10.IX10Controller"/>
+            </summary>
+        </member>
+        <member name="M:CraigsCreations.com.X10.X10CM11aController.#ctor(CraigsCreations.com.X10.HouseCode,System.String,System.Int32,System.IO.Ports.Parity,System.Int32,System.IO.Ports.StopBits)">
+            <summary>
+            Constructor for the X10CM11aController object.  This opens the comm port and initializes global variables
+            </summary>
+            <param name="houseCode">House Code to control</param>
+            <param name="comPort">Comm port the CM11a is on</param>
+            <param name="baudRate">BaudRate of the CM11a </param>
+            <param name="parity">Parity for serial Communications</param>
+            <param name="dataBits">Databits for serial Commnunication</param>
+            <param name="stopBits">Stop bits for serial Communication</param>
+        </member>
+        <member name="M:CraigsCreations.com.X10.X10CM11aController.#ctor(CraigsCreations.com.X10.HouseCode,System.String)">
+            <summary>
+            Constructor with most of the defaults for the CM11a already filled in
+            </summary>
+            <param name="comPort">COM port the CM11a in on</param>
+            <param name="houseCode">The House Code to controll</param>
+        </member>
+        <member name="M:CraigsCreations.com.X10.X10CM11aController.Send(System.Byte[],System.Int32)">
+            <summary>
+            Sends the X10 Command to the CM11a
+            </summary>
+            <param name="buffer">Command to send in an array of bytes</param>
+            <param name="count">size of command array</param>
+        </member>
+        <member name="M:CraigsCreations.com.X10.X10CM11aController.SendOK">
+            <summary>
+            Sends OK Command
+            </summary>
+        </member>
+        <member name="M:CraigsCreations.com.X10.X10CM11aController.Checksum(System.Byte[],System.Int32)">
+            <summary>
+            Computes Checksum of transmission to determine if the controller received command
+            properly
+            </summary>
+            <param name="buffer">Command to send in the form of a byte array.</param>
+            <param name="count">length of command array</param>
+            <returns></returns>
+        </member>
+        <member name="M:CraigsCreations.com.X10.X10CM11aController.GetCM11aDeviceCode(System.Int32)">
+            <summary>
+            Determines the actual Device Code as it appears to the CM11a
+            </summary>
+            <param name="deviceCode">Device Code to operate on</param>
+            <returns>CM11a representation of the device code</returns>
+        </member>
+        <member name="M:CraigsCreations.com.X10.X10CM11aController.ControlDevice(System.Int32,CraigsCreations.com.X10.Function,System.Int32)">
+            <summary>
+            This is the interface for actually sending individual commands to a particular device
+            </summary>
+            <param name="deviceCode">Device code to be operated on</param>
+            <param name="deviceCommand">Command to send to device</param>
+            <param name="lightLevel">if Dimming or Brightening then this is a percentage to raise or lower
+            light level.  If not Dimming or Brightening then this parameter is ignored </param>
+        </member>
+        <member name="M:CraigsCreations.com.X10.X10CM11aController.TurnAllUnitsOff">
+            <summary>
+            Sends the Turn All Units Off code
+            </summary>
+        </member>
+        <member name="M:CraigsCreations.com.X10.X10CM11aController.TurnAllLampsOn">
+            <summary>
+            Sends the Turn All Lamps On Signal
+            </summary>
+        </member>
+        <member name="M:CraigsCreations.com.X10.X10CM11aController.TurnAllLampsOff">
+            <summary>
+            Turn All Lamps Off call the TurnAllUntisOff command.
+            There is a seperate signal for turn all lamps off but does not seem to
+            work on the CM17a or CM11a controllers
+            </summary>
+        </member>
+        <member name="M:CraigsCreations.com.X10.X10CM11aController.Finalize">
+            <summary>
+            Destructor Closes Comm port
+            </summary>
+        </member>
+        <member name="P:CraigsCreations.com.X10.X10CM11aController.TransmissionRetries">
+            <value>Returns or Sets the number of communication retries.</value>
+        </member>
+        <member name="P:CraigsCreations.com.X10.X10CM11aController.Controller">
+            <value>Returns the ControllerType of this object.</value>
+        </member>
+        <member name="T:CraigsCreations.com.X10.X10CM17aController">
+            <summary>
+            This class controls the CM17a X10 Controller.  It is responsible for all
+            IO operations between the Hardware and the Module classes.  It has implemented
+            Some global functionality as defined in the IX10Controller Interface
+            <see cref="T:CraigsCreations.com.X10.IX10Controller"/>
+            </summary>
+        </member>
+        <member name="M:CraigsCreations.com.X10.X10CM17aController.#ctor(CraigsCreations.com.X10.HouseCode,System.String)">
+            <summary>
+            Constructor for CM17a Controller object
+            </summary>
+            <param name="port">String representation of what COM port the controller is on</param>
+            <param name="houseCode">Defines what HouseCode the object should control</param>
+        </member>
+        <member name="M:CraigsCreations.com.X10.X10CM17aController.FirecrackerStandby">
+            <summary>
+            Sends the CM17a Module into standby mode and leaves the CM17a powered up
+            </summary>
+        </member>
+        <member name="M:CraigsCreations.com.X10.X10CM17aController.FirecrackerReset">
+            <summary>
+            Removes power from the CM17a module and effectively resets the controller 
+            </summary>
+        </member>
+        <member name="M:CraigsCreations.com.X10.X10CM17aController.FirecrackerSendBit(System.Boolean)">
+            <summary>
+            CM17a does not interpret sending bits is a standard serial manner.
+            Rather it interprets a bit based on the powered/unpowered nature of RTS/DTR
+            Bit transmission occour by having either
+            RTS=on and DTR=off which is 1 or
+            RTS=off and DTR=on which is 0
+            </summary>
+            <param name="bit">bit value to send</param>
+        </member>
+        <member name="M:CraigsCreations.com.X10.X10CM17aController.FirecrackerInit">
+            <summary>
+            Initializes the CM17a module
+            </summary>
+        </member>
+        <member name="M:CraigsCreations.com.X10.X10CM17aController.FirecrackerSleep">
+            <summary>
+            Between transmissions of sequential commands the CM17a must be reset.
+            To allow for the previous command to be processed the system waits 70ms for the
+            command to go before removing power
+            </summary>
+        </member>
+        <member name="M:CraigsCreations.com.X10.X10CM17aController.Send(CraigsCreations.com.X10.X10CM17aController.CM17aData)">
+            <summary>
+            Sends the data stream to the CM17a
+            </summary>
+            <param name="cmd">the Command to be sent to the CM17a</param>
+        </member>
+        <member name="M:CraigsCreations.com.X10.X10CM17aController.Send(CraigsCreations.com.X10.X10CM17aController.CM17aData,CraigsCreations.com.X10.X10CM17aController.CM17aData,System.Int32)">
+            <summary>
+            Sends more complicated commands to CM17a
+            Dim/Bright functions only work in increments of 5%. In order to raise the
+            lighting by 30 percent the Bright command would have to be sent 6 times
+            </summary>
+            <param name="cmdAddress">Cmd to address the Device Code to be operated on</param>
+            <param name="cmdDimBright">Cmd to Dim or Brighten Lamp Modules</param>
+            <param name="lightLevel">Percentage to brighten or lower.</param>
+        </member>
+        <member name="M:CraigsCreations.com.X10.X10CM17aController.GetCM17aDeviceCode(System.Int32,CraigsCreations.com.X10.Function)">
+            <summary>
+            The CM71a has the device and function code intertwined with each other.
+            Instead of computing what the bit values programatically should be these values
+            have been predefined in the CM1aDeviceCode Enumeration <see cref="T:CraigsCreations.com.X10.X10CM17aController.CM17aDeviceCode"/>
+            This enumeration has been defined from the development documentaion provided by X10
+            </summary>
+            <param name="deviceCode">Device Code to be operated on</param>
+            <param name="function">Function to be performed</param>
+            <returns>Returns a CM17aDeviceCode enumeration value</returns>
+        </member>
+        <member name="M:CraigsCreations.com.X10.X10CM17aController.ControlDevice(System.Int32,CraigsCreations.com.X10.Function,System.Int32)">
+            <summary>
+            This is the interface for actually sending individual commands to a particular device
+            </summary>
+            <param name="deviceCode">Device code to be operated on</param>
+            <param name="deviceCommand">Command to send to device</param>
+            <param name="lightLevel">if Dimming or Brightening then this is a percentage to raise or lower
+            light level.  If not Dimming or Brightening then this parameter is ignored </param>
+        </member>
+        <member name="M:CraigsCreations.com.X10.X10CM17aController.TurnAllUnitsOff">
+            <summary>
+            Sends the Turn All Units Off code
+            </summary>
+        </member>
+        <member name="M:CraigsCreations.com.X10.X10CM17aController.TurnAllLampsOn">
+            <summary>
+            Sends the Turn All Lamps On Signal
+            </summary>
+        </member>
+        <member name="M:CraigsCreations.com.X10.X10CM17aController.TurnAllLampsOff">
+            <summary>
+            Turn All Lamps Off call the TurnAllUntisOff command.
+            There is a seperate signal for turn all lamps off but does not seem to
+            work on the CM17a or CM11a controllers
+            </summary>
+        </member>
+        <member name="P:CraigsCreations.com.X10.X10CM17aController.Controller">
+            <value>Returns the ControllerType of this object.</value>
+        </member>
+        <member name="T:CraigsCreations.com.X10.X10CM17aController.CM17aData">
+            <summary>
+            The CM17aData class facilitates formating the transmission stream.
+            Data transmission for the CM17a has a set header and footer as well as
+            2 data sections.  The easiest way to translate the predefined bit patterns to
+            transmission format was through the BitArray. Unfortunately this screws up order.
+            Also the Header codes are reversed from the header codes in the CM11a module.
+            This class reverses the Header code as well as the bitorder of the transmission
+            itself.
+            </summary>
+        </member>
+        <member name="M:CraigsCreations.com.X10.X10CM17aController.CM17aData.ReverseStream(System.Collections.BitArray,System.Int32,System.Int32)">
+            <summary>
+            Since BitArray does not have a Reverse functionality and for the purposes
+            of this library I saw no need to extend BitArray I just created a simple reverse routine
+            for reversing the bits in a bitarray
+            </summary>
+            <param name="bitstream">  A BitArray type</param>
+            <param name="index">The starting Index for the reversal process</param>
+            <param name="length">The number of bits to reverse from Index</param>
+        </member>
+        <member name="M:CraigsCreations.com.X10.X10CM17aController.CM17aData.FormatBuffer(System.Collections.BitArray)">
+            <summary>
+            Format the Data Blocks including the Header for CM17a Transmission
+            </summary>
+            <param name="bitstream">BitArray of CM17a data block</param>
+            <returns>A properly formatted stream of bits for CM17a Transmission</returns>
+        </member>
+        <member name="M:CraigsCreations.com.X10.X10CM17aController.CM17aData.ToBitArray">
+            <summary>
+            Converts the header + data + footer data for the CM17a module to
+            a bit array
+            </summary>
+            <returns>A BitArray representing a properly formated CM17a transmission</returns>
+        </member>
+        <member name="P:CraigsCreations.com.X10.X10CM17aController.CM17aData.Data1">
+            <value>Data1 sets or returns a byte indicating the first data byte in the transmission</value>
+        </member>
+        <member name="P:CraigsCreations.com.X10.X10CM17aController.CM17aData.Data2">
+            <value>Data2 sets or returns a byte indicating the second data byte in the transmission</value>
+        </member>
+        <member name="T:CraigsCreations.com.X10.X10CM17aController.CM17aDeviceCode">
+            <summary>
+            Device Codes for the CM17a as defined by the X10 Developer documentation 
+            </summary>
+        </member>
+        <member name="T:CraigsCreations.com.X10.X10Lamp">
+            <summary>
+            X10Lamp is a class desinged to handle funtions relating to the Lamp Module.
+            It is inherited from X10Application as the X10Lamp has all the functionality
+            of the Application Module with the addision of Dim/Bright Capabilities
+            </summary>
+        </member>
+        <member name="F:CraigsCreations.com.X10.X10Lamp.lightLevel">
+            <summary>
+            Light Level of Lamp module
+            </summary>
+        </member>
+        <member name="M:CraigsCreations.com.X10.X10Lamp.#ctor(CraigsCreations.com.X10.IX10Controller,System.Int32)">
+            <summary>
+            X10Lamp Constructor.  This initializes the light level to zero and passes the controller
+            and device code to the application constructor.
+            The <paramref name="controller"/> Parameter takes an object that has implemented the
+            IX10Controller interface.
+            The <paramref name="code"/> Parameter takes an Integer setting the device code of the lamp
+            module.
+            </summary>
+            <remarks>
+            The dimming/brighening functions depend on the lamp module being off or light level at 0
+            when module is instantiated.  If this is not the case then the dimm/brighten function may
+            perform strangely until the device has been turned off/on by this interface.
+            Also since there is no feed back from module dimming or brightening through other
+            remote controllers will cause problems.
+            </remarks>
+        </member>
+        <member name="M:CraigsCreations.com.X10.X10Lamp.Dim">
+            <summary>
+            Dims the Lamp Module by 5 percent.
+            </summary>
+        </member>
+        <member name="M:CraigsCreations.com.X10.X10Lamp.Brighten">
+            <summary>
+            Brightens the Lamp Module by 5 percent.
+            </summary>
+        </member>
+        <member name="M:CraigsCreations.com.X10.X10Lamp.Dim(System.Int32)">
+            <summary>
+            Dims the Lamp Module by the percentage passed in.
+            The <paramref name="Level"/> takes an integer representing the level to Dim
+            </summary>
+        </member>
+        <member name="M:CraigsCreations.com.X10.X10Lamp.Brighten(System.Int32)">
+            <summary>
+            Brightens the Lamp Module by the percentage passed in.
+            The <paramref name="Level"/> takes an integer representing the level to Brighten.
+            </summary>
+        </member>
+        <member name="M:CraigsCreations.com.X10.X10Lamp.Off">
+            <summary>
+            Turns the Lamp Module off and sets the Light Level to zero 
+            </summary>
+        </member>
+        <member name="M:CraigsCreations.com.X10.X10Lamp.On">
+            <summary>
+            Turns the Lamp Module on and sets the Light Level to 100 percent.
+            </summary>
+        </member>
+        <member name="P:CraigsCreations.com.X10.X10Lamp.LightLevel">
+            <value>LightLevel gets or sets the Light Level (by percentage) of the lamp module</value>
+        </member>
+    </members>
+</doc>
